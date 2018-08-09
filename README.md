@@ -11,13 +11,13 @@
 
 #### 一、安装SILUBIUM区块链节点
 1. 根据服务器操作系统类型下载节点最新版本：http://update.silubium.org
-2. 安装成功后，建议自行指定数据目录，如：/opt/sludata，并在该目录建立配置文件silubium.conf  
+2. 安装成功后，建议自行指定数据目录，如：/opt/sludata，并在该目录下建立配置文件silubium.conf  
 ```
 #启用节点rpc服务
 server=1
 #连接rpc服务的用户名和密码，与在接口配置文件保持一致
 rpcuser=deaking20180807
-rpcpassword=sfdlsddfs3454545821#$
+rpcpassword=sfdlsddfs345454582
 #连接超时参数(秒)
 rpcclienttimeout=600
 #测试链监听端口
@@ -29,6 +29,31 @@ rpcport=16906
 主链： ./silubiumd --datadir=/opt/sludata  
 测试链：./silubiumd --datadir=/opt/sludata --testnet  
 3. 服务器正常启动节点程序后，需要开放外网端口5906（主链）或15906（测试链），节点通过该端口自动同步区块链数据。
+4. 为了钱包节点安全，对钱包可以进行加密。执行：
+./silubium-cli --datadir=/opt/sludata  encryptwallet "你的密码"
 
 #### 二、安装接口程序
 1. 安装jdk8
+2. 将zhaishi.jar和application.properties下载到服务器同一目录中，可调整application.properties中的参数
+```
+#节点类型，main表示主链，test表示测试链
+#network.type=main
+network.type=test
+#接口监听端口，可通过 http://127.0.0.1:7010访问
+server.port=7010
+#通过调用api生成的私钥
+dncrypt.password.privatekey=MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg6VikQb818txMAQzUkNcn+0tuM5sjOxGxAX9V9T1FzROgCgYIKoZIzj0DAQehRANCAAR9MtQeNhbnLRyzCq2IpZGN+x9OodHnL+DaB3s6+r6ZIxj6IlYGeIyDba/YoRQxvr0hRFcqV4u6QDje42n/TP32
+#rpc调用参数，与silubium.conf保持一致
+coin.rpc=http://deaking20180804:sfdlsddfs345454582@127.0.0.1:16906/
+#无量链的核心参数
+coin.name=Worldless Token - TEST7
+coin.unit=WLL7
+#钱包密码密文，明文密码长度不要超过40位
+coin.password=BAGLFj40F6ktamlPkcl6ldfclWMjCsu7cyhNLHp4eBRL/aHLMyYN2g+tjsP80gCtl8rEHV2diMGvUhZgK/gXkbGtFp1xgkdvIuLVhaTOeVAQO9E4cE6mSEEoGxtSww93WrE=
+#区块链最少确认次数
+transaction.minconf=10
+#合约地址
+token.address=cb8d56b76f1ce543b3a974d2ead4a2a7edc80fb7
+#币种精度
+token.decimal=8
+```
