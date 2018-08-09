@@ -62,10 +62,10 @@ token.decimal=8
 
 #### 三、测试过程
 1. 若对钱包进行了加密，使用接口生成密钥对（公钥+私钥），用公钥对密码进行加密，将密文密码配置到coin.password，将私钥配置到dncrypt.password.privatekey，重启jar。
-2. 从节点中获一个新slu地址作为合约的manager地址，执行：  
+2. 从节点中获一个新slu地址作为合约的管理（manager）地址（如：SLSiqnZLyvKbyJ6F5U7SSFDkxTSkKfmuZ4M3），执行：  
 ./silubium-cli --datadir=/opt/sludata getnewaddress 
 3. 与合约部署方(owner)联系，对manager授权并预挖20亿，manager地址上需要充值slu作为GAS
-4. 从节点中获一个新slu地址作为合约的矿工(miner)地址【实际运行时，由矿工自行提供地址】  
+4. 从节点中获一个新slu地址作为合约的矿工(miner)地址（如：SLSSpo2fcRTQDnZYe1MXjRBj9NSi1yGoVRsX）【实际运行时，由矿工自行提供地址】  
 （1）授权矿工：  http://127.0.0.1:7010/rpc/option?optionType=6530fa45&fromAddress=manager地址&toAddress=minter地址&amount=0  
 （2）矿工挖矿：  http://127.0.0.1:7010/rpc/option?optionType=40c10f19&fromAddress=manager地址&toAddress=minter地址&amount=1000  
 5. 调用接口成功后，会返回message的值，该值为交易编号，执行以下命令可以查询交易是否确认  
