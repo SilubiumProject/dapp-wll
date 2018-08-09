@@ -18,16 +18,16 @@ server=1
 #连接rpc服务的用户名和密码，与在接口配置文件保持一致
 rpcuser=deaking20180807
 rpcpassword=sfdlsddfs3454545821#$
-#连接超时参数
+#连接超时参数(秒)
 rpcclienttimeout=600
 #测试链监听端口
 rpcport=16906
 #主链监听端口
 #rpcport=6906
 ```
-在开发期间可以启动测试链进行调试
-主链： ./silubiumd --datadir=/opt/sludata
-测试链：./silubiumd --datadir=/opt/sludata --testnet
+在开发期间可以启动测试链进行调试  
+主链： ./silubiumd --datadir=/opt/sludata  
+测试链：./silubiumd --datadir=/opt/sludata --testnet  
 3. 服务器正常启动节点程序后，需要开放外网端口5906（主链）或15906（测试链），节点通过该端口自动同步区块链数据。
 
 #### 二、安装接口程序
