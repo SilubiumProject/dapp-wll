@@ -34,7 +34,7 @@ rpcport=16906
 
 #### 二、安装接口程序
 1. 安装jdk8
-2. 将zhaishi.jar和application.properties下载到服务器同一目录中，可调整application.properties中的参数
+2. 将zhaishi.jar和application.properties下载到服务器同一目录中，可调整application.properties中的参数值，但不要对属性进行增减。
 ```
 #节点类型，main表示主链，test表示测试链
 #network.type=main
@@ -57,3 +57,17 @@ token.address=cb8d56b76f1ce543b3a974d2ead4a2a7edc80fb7
 #币种精度
 token.decimal=8
 ```
+3. 启动接口程序：java -jar zhaishi.jar
+4. 访问http://127.0.0.1:7010/swagger-ui.html进行调试
+
+#### 三、测试过程
+1. 若对钱包进行了加密，使用接口生成密钥对（公钥+私钥），用公钥对密码进行加密，将密文密码配置到coin.password，将私钥配置到dncrypt.password.privatekey，重启jar。
+2. 从节点中获一个新slu地址作为合约的manager地址，执行：  
+./silubium-cli --datadir=/opt/sludata getnewaddress 
+3. 与合约部署方(owner)联系，对manager授权并预挖20亿，manager地址上需要充值slu作为GAS
+4. 从节点中获一个新slu地址作为合约的矿工(miner)地址【实际运行时，由矿工自行提供地址】  
+（1）授权矿工：  http://127.0.0.1:7010/rpc/option?optionType=6530fa45&fromAddress=manager地址&toAddress=minter地址&amount=0  
+（2）矿工挖矿：  http://127.0.0.1:7010/rpc/option?optionType=40c10f19&fromAddress=manager地址&toAddress=minter地址&amount=1000  
+5. 调用接口成功后，会返回message的值，该值为交易编号，执行以下命令可以查询交易是否确认  
+./silubium-cli --datadir=/opt/sludata gettransaction 交易编号  
+
