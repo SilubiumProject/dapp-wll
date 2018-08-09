@@ -12,8 +12,7 @@
 #### 一、安装SILUBIUM区块链节点
 1. 根据服务器操作系统类型下载节点最新版本：http://update.silubium.org
 2. 安装成功后，建议自行指定数据目录，如：/opt/sludata，并在该目录建立配置文件silubium.conf  
----  
-(```)  
+```
 #启用节点rpc服务
 server=1
 #连接rpc服务的用户名和密码，与在接口配置文件保持一致
@@ -25,8 +24,7 @@ rpcclienttimeout=600
 rpcport=16906
 #主链监听端口
 #rpcport=6906
-(```)  
----  
+```
 在开发期间可以启动测试链进行调试
 主链： ./silubiumd --datadir=/opt/sludata
 测试链：./silubiumd --datadir=/opt/sludata --testnet
