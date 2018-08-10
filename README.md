@@ -58,7 +58,7 @@ token.address=cb8d56b76f1ce543b3a974d2ead4a2a7edc80fb7
 token.decimal=8
 ```
 3. 启动接口程序：java -jar zhaishi.jar
-4. 访问 http://127.0.0.1:7010/swagger-ui.html  进行调试
+4. 访问 http://127.0.0.1:7010/index.html 进行接口调试
 
 #### 三、测试过程
 1. 若对钱包进行了加密，使用接口生成密钥对（公钥+私钥），用公钥对密码进行加密，将密文密码配置到coin.password，将私钥配置到dncrypt.password.privatekey，重启jar。
