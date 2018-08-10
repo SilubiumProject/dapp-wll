@@ -70,4 +70,4 @@ token.decimal=8
 （2）矿工挖矿：  http://127.0.0.1:7010/rpc/option?optionType=40c10f19&fromAddress=manager地址&toAddress=minter地址&amount=1000  
 5. 调用接口成功后，会返回message的值，该值为交易编号，执行以下命令可以查询交易是否确认  
 ./silubium-cli --datadir=/opt/sludata gettransaction 交易编号  
-6. 主链区块浏览器可查看交易情况：https://silkchain2.silubium.org，测试链只能通过命令./silubium-cli查看。
+6. 主链区块浏览器可查看交易情况：https://silkchain2.silubium.org ，测试链只能通过命令./silubium-cli查看。
