@@ -31,8 +31,8 @@ contract WLLoken is SafeMath {
   address public manager;
   bool private managerSet = false;
 
-  string public constant name = 'Worldless Token - TEST7';
-  string public constant symbol = 'WLL7';
+  string public constant name = 'Worldless Token';
+  string public constant symbol = 'WLL';
   uint256 public totalSupply = 10**10 * 10**uint256(decimals);
   uint256 public currentSupply = 0;
 
