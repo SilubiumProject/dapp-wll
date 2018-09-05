@@ -73,4 +73,4 @@ token.decimal=8
 6. 主链区块浏览器可查看交易情况：https://silkchain2.silubium.org ，测试链只能通过命令./silubium-cli查看。
 
 #### 四、合约部署【主链】
-无量链部署合约地址为：[6bb44859153626d4787bf8af7731dd753879208a](https://silkchain2.silubium.org/contract/6bb44859153626d4787bf8af7731dd753879208a)
+无量链部署合约地址为：[2e0000b2e2325f649dc43d960f03d7b6deda72dd](https://silkchain2.silubium.org/contract/2e0000b2e2325f649dc43d960f03d7b6deda72dd)
