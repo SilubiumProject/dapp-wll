@@ -31,8 +31,8 @@ contract WLLoken is SafeMath {
   address public manager;
   bool private managerSet = false;
 
-  string public constant name = 'Worldless Token - TEST7';
-  string public constant symbol = 'WLL7';
+  string public constant name = 'Worldless Token';
+  string public constant symbol = 'WLL';
   uint256 public totalSupply = 10**10 * 10**uint256(decimals);
   uint256 public currentSupply = 0;
 
@@ -182,12 +182,12 @@ contract WLLoken is SafeMath {
   }
 
   // recycles the WLL
-  function recycle(address _spender, uint256 _value)  public validAddress(_spender) onlyManager() returns (bool success){
-    require(balanceOf[_spender] >= _value);
-    balanceOf[_spender] = safeSub(balanceOf[_spender], _value);
-    currentSupply = safeSub(currentSupply, _value); 
-    balanceOf[owner] = safeAdd(balanceOf[owner], _value);
-    emit Transfer(_spender, owner, _value);
-    return true;
-  }
+  //function recycle(address _spender, uint256 _value)  public validAddress(_spender) onlyManager() returns (bool success){
+  //  require(balanceOf[_spender] >= _value);
+  //  balanceOf[_spender] = safeSub(balanceOf[_spender], _value);
+  //  currentSupply = safeSub(currentSupply, _value); 
+  //  balanceOf[owner] = safeAdd(balanceOf[owner], _value);
+  //  emit Transfer(_spender, owner, _value);
+  //  return true;
+  //}
 }

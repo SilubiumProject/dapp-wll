@@ -71,3 +71,6 @@ token.decimal=8
 5. 调用接口成功后，会返回message的值，该值为交易编号，执行以下命令可以查询交易是否确认  
 ./silubium-cli --datadir=/opt/sludata gettransaction 交易编号  
 6. 主链区块浏览器可查看交易情况：https://silkchain2.silubium.org ，测试链只能通过命令./silubium-cli查看。
+
+#### 四、合约部署【主链】
+无量链部署合约地址为：[bb4d134a60e1a8bad939471e1e9bd33901ba9a50](https://silkchain2.silubium.org/contract/bb4d134a60e1a8bad939471e1e9bd33901ba9a50)
